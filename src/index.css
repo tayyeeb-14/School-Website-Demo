@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 45 20% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 60% 25%;
+    --primary-foreground: 45 20% 97%;
+
+    --secondary: 42 87% 55%;
+    --secondary-foreground: 220 30% 15%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 42 87% 55%;
+    --accent-foreground: 220 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 60% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom school colors */
+    --navy: 220 60% 25%;
+    --navy-light: 220 50% 35%;
+    --navy-dark: 220 70% 15%;
+    --gold: 42 87% 55%;
+    --gold-light: 42 90% 70%;
+    --gold-dark: 42 80% 45%;
+    --cream: 45 30% 95%;
+    --cream-dark: 45 20% 90%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-dark)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--navy-dark) / 0.7) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(var(--navy) / 0.08);
+    --shadow-md: 0 4px 20px hsl(var(--navy) / 0.12);
+    --shadow-lg: 0 8px 40px hsl(var(--navy) / 0.15);
+    --shadow-gold: 0 4px 20px hsl(var(--gold) / 0.3);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 10%;
+    --foreground: 45 20% 95%;
+
+    --card: 220 30% 14%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 220 30% 14%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 42 87% 55%;
+    --primary-foreground: 220 30% 10%;
+
+    --secondary: 220 40% 25%;
+    --secondary-foreground: 45 20% 95%;
+
+    --muted: 220 25% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 42 87% 55%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 25% 22%;
+    --input: 220 25% 22%;
+    --ring: 42 87% 55%;
+
+    --navy: 220 50% 35%;
+    --navy-light: 220 45% 50%;
+    --navy-dark: 220 40% 20%;
+    --cream: 220 20% 16%;
+    --cream-dark: 220 25% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-school {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
